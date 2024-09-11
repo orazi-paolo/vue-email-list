@@ -5,8 +5,6 @@ createApp({
         return {
             // creo un dato per contenere le email
             emails: [],
-            // creo un dato per contare le email
-            emailsCount: 0,
         }
     },
     methods: {
@@ -17,12 +15,12 @@ createApp({
                     .then((response) => {
                         // verifico dove si trovano le email nell oggetto di risposta
                         console.log(response);
+
                         // pusho le email randomiche nell'array emails
-                        this.emails.push(response.data.response)
-                        // incremento il contatore delle email
-                        this.emailsCount++;
+                        this.emails.push(response.data.response);
+
                         // se ho ottenuto 10 email, stampo in console l'array emails
-                        if (this.emailsCount === 10) {
+                        if (this.emails.length === 10) {
                             console.log(this.emails);
                         }
                     })

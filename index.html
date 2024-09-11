@@ -15,9 +15,11 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <div id="app">
-        <ul>
-            <li></li>
+        <h1>EMAIL RANDOM</h1>
+        <ul v-if="emails.length === 10">
+            <li v-for="email in emails">{{ email }}</li>
         </ul>
+        <div v-else>Caricamento...</div>
 
     </div>
 
